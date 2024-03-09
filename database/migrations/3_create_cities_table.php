@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('conferencias', function (Blueprint $table) {
+        Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            $table->string('logo',200)->nullable();
-            $table->string('nombre_conferencia',100)->unique();
-            $table->string('sb_conferencia',100)->default(1);
+            $table ->string('city_name',100)->unique();
             $table->timestamps();
         });
     }
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('conferencias');
+        Schema::dropIfExists('cities');
     }
 };
